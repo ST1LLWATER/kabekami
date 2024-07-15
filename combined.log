@@ -1,0 +1,12 @@
+2024-07-15T15:20:57.306Z info: sigint received, shutting down
+2024-07-15T15:22:09.487Z error: Status: 500, Message: "limit" is required, Stack: ValidationError: "limit" is required
+2024-07-15T15:23:24.691Z info: sigint received, shutting down
+2024-07-15T15:23:30.164Z error: Status: 500, Message: "limit" is required, Stack: ValidationError: "limit" is required
+2024-07-15T15:23:36.220Z error: Status: 500, Message: "limit" is required, Stack: ValidationError: "limit" is required
+2024-07-15T15:23:37.202Z info: sigint received, shutting down
+2024-07-15T15:23:40.975Z error: Status: 500, Message: "limit" is required, Stack: ValidationError: "limit" is required
+2024-07-15T16:32:06.479Z info: sigint received, shutting down
+2024-07-15T16:36:38.735Z info: sigint received, shutting down
+2024-07-15T16:47:04.944Z info: sigint received, shutting down
+2024-07-15T17:28:12.129Z info: sigint received, shutting down
+2024-07-15T17:29:55.630Z info: sigint received, shutting down
