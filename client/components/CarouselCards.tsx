@@ -1,11 +1,11 @@
 import React from 'react';
-import { Dimensions, View } from 'react-native';
-import Carousel, { Pagination } from 'react-native-snap-carousel';
+import {Dimensions, View} from 'react-native';
+import Carousel, {Pagination} from 'react-native-snap-carousel';
 import CarouselCardItem from './CarouselCardItem';
 import data from '../constants/Data';
 
 const CarouselCards = () => {
-  const { width: screenWidth } = Dimensions.get('window');
+  const {width: screenWidth} = Dimensions.get('window');
   const [index, setIndex] = React.useState(0);
   const isCarousel = React.useRef(null);
 
@@ -20,11 +20,12 @@ const CarouselCards = () => {
         layoutCardOffset={0}
         sliderWidth={screenWidth}
         sliderHeight={screenWidth * 1}
-        itemWidth={screenWidth - 60}
+        itemWidth={screenWidth - 130}
         data={data}
         renderItem={CarouselCardItem}
+        activeSlideAlignment="center"
         hasParallaxImages={true}
-        onSnapToItem={(index) => setIndex(index)}
+        onSnapToItem={index => setIndex(index)}
       />
       <Pagination
         dotsLength={data.length}

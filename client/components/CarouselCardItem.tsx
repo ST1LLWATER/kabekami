@@ -33,8 +33,8 @@ const CarouselCardItem = ({item, index}, parallaxProps) => {
 
 const styles = StyleSheet.create({
   item: {
-    width: screenWidth - 60,
-    height: screenWidth * 2,
+    width: screenWidth - 130,
+    height: screenWidth * 1,
   },
   imageContainer: {
     flex: 1,
@@ -47,10 +47,6 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
   },
   carouselTitle: {
-    position: 'absolute',
-    bottom: 10,
-    left: 10,
-    right: 10,
     color: 'white',
     fontSize: 16,
     fontWeight: 'bold',
