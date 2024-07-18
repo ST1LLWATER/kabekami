@@ -1,4 +1,4 @@
-import * as controller from '../controllers/wallpapers.controller';
+import * as controller from '@/controllers';
 import {Router} from 'express';
 
 const router = Router();

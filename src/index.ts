@@ -3,8 +3,8 @@ if (process.env.NODE_ENV !== 'production')
   import('dotenv').then(({config}) => config());
 
 // eslint-disable-next-line import/first
-import app from './app';
-import logger from './utils/logger';
+import app from '@/app';
+import logger from '@/utils/logger';
 
 const {PORT = 5000} = process.env;
 

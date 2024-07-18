@@ -7,18 +7,18 @@ import {
   Image,
   Platform,
 } from 'react-native';
-import { ParallaxImage } from 'react-native-snap-carousel';
+import {ParallaxImage} from 'react-native-snap-carousel';
 
 // export const SLIDER_WIDTH = Dimensions.get('window').width + 80;
 // export const SLIDER_WIDTH = Dimensions.get('window').width;
 // export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7);
-const { width: screenWidth } = Dimensions.get('window');
+const {width: screenWidth} = Dimensions.get('window');
 
-const CarouselCardItem = ({ item, index }, parallaxProps) => {
+const CarouselCardItem = ({item, index}, parallaxProps) => {
   return (
     <View style={styles.item}>
       <ParallaxImage
-        source={{ uri: item.illustration }}
+        source={{uri: item.illustration}}
         containerStyle={styles.imageContainer}
         style={styles.image}
         parallaxFactor={0.4}
@@ -34,11 +34,11 @@ const CarouselCardItem = ({ item, index }, parallaxProps) => {
 const styles = StyleSheet.create({
   item: {
     width: screenWidth - 60,
-    height: screenWidth * 1,
+    height: screenWidth * 2,
   },
   imageContainer: {
     flex: 1,
-    marginBottom: Platform.select({ ios: 0, android: 1 }), // Prevent a random Android rendering issue
+    marginBottom: Platform.select({ios: 0, android: 1}), // Prevent a random Android rendering issue
     backgroundColor: 'white',
     borderRadius: 8,
   },

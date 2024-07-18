@@ -6,7 +6,7 @@ import createMemoryStore from 'memorystore';
 import createSessionFileStore from 'session-file-store';
 import * as middlewares from './middlewares';
 
-import routers from './routes';
+import routers from '@/routes';
 
 const app = express();
 const MemoryStore = createMemoryStore(session);

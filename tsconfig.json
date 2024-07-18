@@ -21,7 +21,7 @@
     "strictFunctionTypes": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
-    "target": "ES2017",
+    "target": "ESNext",
     "forceConsistentCasingInFileNames": true
   },
   "typeAcquisition": {

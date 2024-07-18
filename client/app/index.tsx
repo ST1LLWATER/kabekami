@@ -1,6 +1,6 @@
 import CarouselCards from '@/components/CarouselCards';
 import data from '@/constants/Data';
-import { Link, useRouter } from 'expo-router';
+import {Link, useRouter} from 'expo-router';
 import React from 'react';
 import {
   View,
@@ -15,12 +15,12 @@ import {
   Pressable,
 } from 'react-native';
 
-const { width: screenWidth } = Dimensions.get('window');
+const {width: screenWidth} = Dimensions.get('window');
 
 const App = () => {
   const router = useRouter();
 
-  const navigateToDetails = ({ id, uri }) => {
+  const navigateToDetails = ({id, uri}) => {
     router.push({
       pathname: '/details',
       params: {
@@ -42,33 +42,34 @@ const App = () => {
         {data.slice(1).map((item, index) => (
           <View style={styles.gridItem} key={index}>
             <Pressable
-              onPress={() =>
-                navigateToDetails({ id: 1, uri: item.illustration })
-              }
+              onPress={() => navigateToDetails({id: 1, uri: item.illustration})}
             >
-              <ImageBackground
-                source={{ uri: item.illustration }}
+              {/* <ImageBackground
+                source={{uri: item.illustration}}
                 style={styles.gridImage}
-              >
-                {/* <Image
-                source={{ uri: item.illustration }}
+              > */}
+              <Image
+                source={{uri: item.illustration}}
+                defaultSource={{
+                  uri: 'https://rukminim2.flixcart.com/image/850/1000/kyt0ya80/poster/w/m/e/medium-demon-slayer-kimetsu-no-yaiba-animated-tv-series-matte-original-imagaybhedbfrvk9.jpeg?q=20&crop=false',
+                }}
                 style={styles.gridImage}
-              /> */}
-                <View style={styles.gridTextContainer}>
-                  <View>
-                    <Text style={styles.gridTitle}>{item.title}</Text>
-                    <Text style={styles.gridSubtitle}>{item.subtitle}</Text>
-                  </View>
-                  <TouchableOpacity style={styles.heartContainer}>
-                    <Image
-                      source={{
-                        uri: 'https://img.icons8.com/?size=100&id=85038&format=png&color=FFFFFF',
-                      }}
-                      style={styles.heartIcon}
-                    />
-                  </TouchableOpacity>
+              />
+              <View style={styles.gridTextContainer}>
+                <View>
+                  <Text style={styles.gridTitle}>{item.title}</Text>
+                  <Text style={styles.gridSubtitle}>{item.subtitle}</Text>
                 </View>
-              </ImageBackground>
+                <TouchableOpacity style={styles.heartContainer}>
+                  <Image
+                    source={{
+                      uri: 'https://img.icons8.com/?size=100&id=85038&format=png&color=FFFFFF',
+                    }}
+                    style={styles.heartIcon}
+                  />
+                </TouchableOpacity>
+              </View>
+              {/* </ImageBackground> */}
             </Pressable>
           </View>
         ))}
@@ -107,7 +108,7 @@ const styles = StyleSheet.create({
 
   imageContainer: {
     flex: 1,
-    marginBottom: Platform.select({ ios: 0, android: 1 }), // Prevent a random Android rendering issue
+    marginBottom: Platform.select({ios: 0, android: 1}), // Prevent a random Android rendering issue
     backgroundColor: 'white',
     borderRadius: 8,
   },
@@ -130,38 +131,71 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
+    paddingHorizontal: 10,
     rowGap: 10,
   },
+  // gridItem: {
+  //   width: (screenWidth - 40) / 2,
+  //   position: 'relative',
+  //   // height: 'auto',
+  //   height: screenWidth * 0.7,
+  //   marginBottom: 10,
+  //   borderRadius: 10,
+  //   overflow: 'hidden',
+  //   backgroundColor: '#333',
+
+  //   shadowColor: '#fff', // Bright white shadow color
+  //   shadowOffset: {width: -2, height: -2}, // Offset the shadow slightly to the top-left
+  //   shadowOpacity: 0.8, // Adjust opacity for desired intensity
+  //   shadowRadius: 10,
+  // },
+  // gridImage: {
+  //   width: '100%',
+  //   height: '100%',
+  //   position: 'absolute',
+  // },
+  // gridTextContainer: {
+  //   padding: 5,
+  //   color: 'black',
+  //   paddingVertical: 10,
+  //   paddingHorizontal: 15,
+  //   display: 'flex',
+  //   marginTop: 'auto',
+  //   flexDirection: 'row',
+  //   justifyContent: 'space-between',
+  //   alignItems: 'center',
+
+  //   backgroundColor: 'white',
+  // },
   gridItem: {
     width: (screenWidth - 40) / 2,
-    // height: 'auto',
-    height: screenWidth * 0.6,
+    height: screenWidth * 0.7,
     marginBottom: 10,
     borderRadius: 10,
     overflow: 'hidden',
     backgroundColor: '#333',
-
-    shadowColor: '#fff', // Bright white shadow color
-    shadowOffset: { width: -2, height: -2 }, // Offset the shadow slightly to the top-left
-    shadowOpacity: 0.8, // Adjust opacity for desired intensity
+    shadowColor: '#fff',
+    shadowOffset: {width: -2, height: -2},
+    shadowOpacity: 0.8,
     shadowRadius: 10,
   },
   gridImage: {
     width: '100%',
     height: '100%',
+    resizeMode: 'cover',
   },
   gridTextContainer: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
     padding: 5,
-    color: 'black',
     paddingVertical: 10,
     paddingHorizontal: 15,
-    display: 'flex',
-    marginTop: 'auto',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-
-    backgroundColor: 'white',
+    backgroundColor: 'rgba(220, 238, 180, 1)',
   },
   gridTitle: {
     // color: 'white',
